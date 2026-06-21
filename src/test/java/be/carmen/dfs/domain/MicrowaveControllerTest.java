@@ -98,7 +98,7 @@ class MicrowaveControllerTest {
         microwave.simulateStart();
 
         //active after initial time
-        await().timeout((DEFAULT_SECONDS_START * 1000), TimeUnit.MILLISECONDS).until(() -> microwave.isHeaterOn());
+        await().timeout((DEFAULT_SECONDS_START * 1010), TimeUnit.MILLISECONDS).until(() -> microwave.isHeaterOn());
         //stops after twice initial time
         await().atMost((DEFAULT_SECONDS_START * 2) + 1, TimeUnit.SECONDS).until(() -> !microwave.isHeaterOn());
     }

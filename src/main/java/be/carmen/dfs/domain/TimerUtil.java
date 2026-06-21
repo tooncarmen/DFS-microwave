@@ -29,7 +29,7 @@ public class TimerUtil {
                 if (LocalDateTime.now().isBefore(endTime)) {
                     log.info("Running... " + Duration.between(LocalDateTime.now(), endTime).toSeconds() + " seconds left");
                 } else {
-                    log.info("TIMER HAS ENDED");
+                    log.debug("TIMER HAS ENDED");
                     cancel();
                     isActive = false;
                     doWhenDone.run();
