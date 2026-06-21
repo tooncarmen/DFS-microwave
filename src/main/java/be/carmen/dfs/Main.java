@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Main {
     static void main() {
-        boolean run = true;
         FakeMicrowave microwave = new FakeMicrowave();
         MicrowaveController controller = new MicrowaveController(microwave, new TimerUtil(), 60);
         microwave.setEventListener(controller);
@@ -36,13 +35,11 @@ public class Main {
                         microwave.simulateStart();
                         break;
                     case "exit":
-                        run = false;
-                        break;
+                        System.exit(0);
                 }
             } else {
                 IO.println("Invalid input");
             }
-
-        } while (run);
+        } while (true);
     }
 }
